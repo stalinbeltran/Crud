@@ -33,7 +33,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
+                <td>{{$product->price}}</td>
                 <td></td>
                 <td>
                     <form action="" method="POST">
