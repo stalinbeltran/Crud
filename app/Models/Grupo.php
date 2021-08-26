@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Grupo extends Model
 {
     use HasFactory;
+
+    protected $table = 'Grupo';
+    public $timestamps = true;
+
+    protected $casts = [
+        'price' => 'float'
+    ];
+
+    protected $fillable = [
+        'descripcion'
+    ];
 }
