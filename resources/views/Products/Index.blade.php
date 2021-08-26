@@ -7,7 +7,7 @@
                 <h2>Laravel 8 CRUD Example </h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="" title="Create a product"> <i class="fas fa-plus-circle"></i>
+                <a class="btn btn-success" href="/products/create" title="Create a product"> <i class="fas fa-plus-circle"></i>
                     </a>
             </div>
         </div>
