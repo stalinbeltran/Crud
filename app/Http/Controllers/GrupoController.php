@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Grupo;
@@ -14,7 +13,10 @@ class GrupoController extends Controller
      */
     public function index()
     {
-        //
+        $grupos = Grupo::latest()->where('activo', 1)->paginate(5);
+
+        return view('grupos.index', compact('grupos'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -24,7 +26,7 @@ class GrupoController extends Controller
      */
     public function create()
     {
-        //
+        return view('grupos.create');
     }
 
     /**
@@ -35,7 +37,14 @@ class GrupoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'descripcion' => 'required'
+        ]);
+
+        Grupo::create($request->all());
+
+        return redirect()->route('grupos.index')
+            ->with('success', 'Grupo created successfully.');
     }
 
     /**
@@ -46,7 +55,7 @@ class GrupoController extends Controller
      */
     public function show(Grupo $grupo)
     {
-        //
+        return view('grupos.show', compact('grupo'));
     }
 
     /**
@@ -57,21 +66,25 @@ class GrupoController extends Controller
      */
     public function edit(Grupo $grupo)
     {
-        //
+        return view('grupos.edit', compact('grupo'));
     }
-
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Grupo  $grupo
+     * @param  \App\Models\grupo  $grupo
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Grupo $grupo)
     {
-        //
-    }
+        $request->validate([
+            'descripcion' => 'required'
+        ]);
+        $grupo->update($request->all());
 
+        return redirect()->route('grupos.index')
+            ->with('success', 'Grupo updated successfully');
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -80,6 +93,11 @@ class GrupoController extends Controller
      */
     public function destroy(Grupo $grupo)
     {
-        //
+        $grupo->activo = 0;
+        $grupo->save();
+
+        return redirect()->route('grupos.index')
+            ->with('success', 'Grupo deleted successfully');
     }
 }
+
