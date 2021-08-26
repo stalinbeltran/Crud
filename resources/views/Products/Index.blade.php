@@ -38,7 +38,7 @@
                 <td>
                     <form action="" method="POST">
 
-                        <a href="" title="show">
+                        <a href="products/{{$product->id}}" title="show">
                             <i class="fas fa-eye text-success  fa-lg"></i>
                         </a>
 
