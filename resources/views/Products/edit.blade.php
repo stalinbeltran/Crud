@@ -23,7 +23,7 @@
         </div>
     @endif
 
-    <form action="" method="POST">
+    <form action="/products/{{$product->id}}" method="POST">
         @csrf
         @method('PUT')
 
