@@ -31,10 +31,10 @@
         @foreach ($products as $product)
             <tr>
                 <td></td>
-                <td></td>
-                <td></td>
+                <td>{{$product->name}}</td>
+                <td>{{$product->description}}</td>
                 <td>{{$product->price}}</td>
-                <td></td>
+                <td>{{$product->created_at}}</td>
                 <td>
                     <form action="" method="POST">
 
