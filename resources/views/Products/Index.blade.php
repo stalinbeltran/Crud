@@ -36,7 +36,7 @@
                 <td>{{$product->price}}</td>
                 <td>{{$product->created_at}}</td>
                 <td>
-                    <form action="" method="POST">
+                    <form action="/products/{{$product->id}}" method="POST">
 
                         <a href="/products/{{$product->id}}" title="show">
                             <i class="fas fa-eye text-success  fa-lg"></i>
