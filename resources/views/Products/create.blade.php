@@ -35,7 +35,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Description:</strong>
-                    <textarea class="form-control" style="height:50px" name="introduction"
+                    <textarea class="form-control" style="height:50px" name="description"
                         placeholder="description"></textarea>
                 </div>
             </div>
