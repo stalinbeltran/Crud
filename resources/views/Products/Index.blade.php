@@ -38,11 +38,11 @@
                 <td>
                     <form action="" method="POST">
 
-                        <a href="{{$product->id}}" title="show">
+                        <a href="/products/{{$product->id}}" title="show">
                             <i class="fas fa-eye text-success  fa-lg"></i>
                         </a>
 
-                        <a href="{{$product->id}}/edit">
+                        <a href="/products/{{$product->id}}/edit">
                             <i class="fas fa-edit  fa-lg"></i>
                         </a>
 
