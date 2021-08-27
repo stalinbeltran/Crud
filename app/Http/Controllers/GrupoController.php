@@ -55,6 +55,9 @@ class GrupoController extends Controller
      */
     public function show(Grupo $grupo)
     {
+        $product = $grupo->product;
+        error_log('product de Grupo:');
+        error_log($product);
         return view('grupos.show', compact('grupo'));
     }
 
