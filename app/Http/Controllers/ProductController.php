@@ -57,7 +57,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        $grupo = $product->grupo;
+        $grupo = $product->grupos;
         error_log('Grupo de Producto:');
         error_log($grupo);
         return view('products.show', compact('product'));
