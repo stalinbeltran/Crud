@@ -22,8 +22,9 @@ class Product extends Model
         'price',
         'created_at'
     ];
-    public function grupo()
+    public function grupos()
     {
-        return $this->hasOne(Grupo::class);
+        return $this->hasMany(Grupo::class);
     }
+
 }
